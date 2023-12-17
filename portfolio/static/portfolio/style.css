@@ -1,0 +1,9 @@
+.portfolio-photo{
+    display: block;
+    margin: 0 auto;
+}
+
+.parent{
+    width: 100px;
+    height: 100px;
+}

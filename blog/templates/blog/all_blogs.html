@@ -1,0 +1,29 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+{% load extras %}
+<section  class="bg-black">
+    <div class="container p-5">
+        <h1 class="text-center mt-4">Блог</h1>
+        <p class="text-center mt-2">Я создаю красивые сайты, которые понравятся вашим пользователям</p>
+    </div>
+</section>
+<section class="container">
+    <h2 class="mt-5 border-bottom border-secondary pb-3">Автор опубликовал {{ blogs.count }} пост{{ blogs.count|ru_plural }}</h2>
+    <div class="row row-cols-2 justify-content-between gap-5 mt-5">
+        {% for blog in blogs %}
+            <div class="col-5 border-bottom border-secondary" >
+                <a href="{% url "blog:detail" blog.id %}" class="d-block text-decoration-none mb-1">
+                    <h2 class="text-light">{{ blog.title }}</h2>
+                    <p class="text-light">{{ blog.description|safe|truncatechars:100}}</p>
+                    {% if blog.image %}
+                        <img src="{{blog.image.url}}" style="width: 100%; ">
+                    {% endif %}
+                </a>
+                
+                <br>
+                <date class="text-secondary">{{ blog.date.date }} в {{ blog.date.time }} </date>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock  %}
