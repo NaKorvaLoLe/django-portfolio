@@ -8,18 +8,13 @@
     height: 100px;
 }
 
+.social-icon{
+    overflow: hidden;
+    -webkit-transition: all 2s ease;
+    transition: all 0.5s ease;
+}
 
-.castom-nav-link {
-    --fill-color: #198CE6;
-    position: relative;
-    display: block;
-    padding: 4px 0;
-    font: 700 3rem Raleway, sans-serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-text-stroke: 2px var(--fill-color);
-    background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
-    color: transparent;
-    background-clip: text;
-    transition: 0.5s linear;
+.social-icon:hover{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
 }
