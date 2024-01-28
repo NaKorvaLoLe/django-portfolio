@@ -1,0 +1,41 @@
+.preview{
+    
+    &__img{
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+    &__title{
+        margin: 4rem 0 ;
+        text-align: center;
+    }
+    &__subtitle{
+        padding: 0 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        &-link{
+            position: relative;
+            text-decoration: none;
+            color: $second-color;
+            & .fa-solid{
+                font-family: serif;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                display: block;
+                width: 0;
+                height: 2px;
+                background: $second-color;
+                transition: .4s;
+                left: 50%;
+                transform: translate(-50%);
+              }
+            &:hover:after {
+                width: 100%;
+            }
+        }
+    }
+}
