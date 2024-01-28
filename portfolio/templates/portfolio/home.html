@@ -69,8 +69,10 @@
                     <div class="projects__content-card">
                         <img src="{{project.image.url}}" class="projects__content-img" alt="Изображение проекта" >
                         <div class="projects__content-wrapper">
-                            <h5 class="projects__content-title">{{ project.title }}</h5>
-                            <p class="projects__content-text">{{ project.description }}</p>
+                            <div class="projects__content-description">
+                                <h5 class="projects__content-title">{{ project.title }}</h5>
+                                <p class="projects__content-text">{{ project.description }}</p>
+                            </div>
                             <div class="projects__content-links">
                                 {% if project.url_repos %}
                                     <a href="{{ project.url_repos }}" class="projects__content-link">GitHub</a>
@@ -88,8 +90,10 @@
                     <div class="projects__content-card">
                         <img src="{{project.image.url}}" class="projects__content-img" alt="Изображение проекта" >
                         <div class="projects__content-wrapper">
-                            <h5 class="projects__content-title">{{ project.title }}</h5>
-                            <p class="projects__content-text">{{ project.description }}</p>
+                            <div class="projects__content-description">
+                                <h5 class="projects__content-title">{{ project.title }}</h5>
+                                <p class="projects__content-text">{{ project.description }}</p>
+                            </div>
                             <div class="projects__content-links">
                                 {% if project.url_repos %}
                                     <a href="{{ project.url_repos }}" class="projects__content-link">GitHub</a>
