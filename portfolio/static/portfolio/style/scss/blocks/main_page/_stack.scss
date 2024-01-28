@@ -1,0 +1,24 @@
+.stack{
+    margin-top: 10rem;
+    &__title{
+        text-align: center;
+        font-weight: 700;
+    }
+    &__list{
+        margin: 0 auto;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 200px));
+        gap: 20px;
+        justify-content: center;
+        &-item{
+            padding: 2rem;
+            &__text{
+                display: block;
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+    }
+    
+}

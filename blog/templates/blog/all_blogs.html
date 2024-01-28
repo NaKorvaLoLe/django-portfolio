@@ -1,29 +1,29 @@
 {% extends "portfolio/base.html" %}
 {% block content %}
 {% load extras %}
-<section  class="bg-black">
-    <div class="container p-5">
-        <h1 class="text-center mt-4">Блог</h1>
-        <p class="text-center mt-2">Я создаю красивые сайты, которые понравятся вашим пользователям</p>
+<section  class="blog container">
+    <div class="blog__wrapper">
+        <h2 class="blog__title">Блог</h2>
+        <p class="blog__subtitle">Здесь Вы можете больше узнать обо мне, о моих достижениях, мои цели и задачи.</p>
+    </div>
+    <div class="blog__content">
+        <h3 class="blog__content-title">Автор опубликовал {{ blogs.count }} пост{{ blogs.count|ru_plural }}</h3>
+        <div class="blog__content-wrapper">
+            {% for blog in blogs %}
+                <div class="blog__card">
+                    <a class="blog__card-link" href="{% url "blog:detail" blog.id %}">
+                        <h2 class="blog__card-title">{{ blog.title }}</h2>
+                        <p class="blog__card-subtitle">{{ blog.description|safe|truncatechars:100}}</p>
+                        {% if blog.image %}
+                            <img class="blog__card-img" src="{{blog.image.url}}">
+                        {% endif %}
+                    </a>
+                    <date class="blog__card-date">{{ blog.date.date }} в {{ blog.date.time }} </date>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
-<section class="container">
-    <h2 class="mt-5 border-bottom border-secondary pb-3">Автор опубликовал {{ blogs.count }} пост{{ blogs.count|ru_plural }}</h2>
-    <div class="row row-cols-2 justify-content-between gap-5 mt-5">
-        {% for blog in blogs %}
-            <div class="col-5 border-bottom border-secondary" >
-                <a href="{% url "blog:detail" blog.id %}" class="d-block text-decoration-none mb-1">
-                    <h2 class="text-light">{{ blog.title }}</h2>
-                    <p class="text-light">{{ blog.description|safe|truncatechars:100}}</p>
-                    {% if blog.image %}
-                        <img src="{{blog.image.url}}" style="width: 100%; ">
-                    {% endif %}
-                </a>
-                
-                <br>
-                <date class="text-secondary">{{ blog.date.date }} в {{ blog.date.time }} </date>
-            </div>
-        {% endfor %}
-    </div>
-</section>
+
+
 {% endblock  %}
