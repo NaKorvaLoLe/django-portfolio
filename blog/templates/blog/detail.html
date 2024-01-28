@@ -1,7 +1,7 @@
 {% extends "portfolio/base.html" %} {% block content %}
 <section class="detail container">
   <a class="detail__link"  href="{% url "blog:all_blogs" %}">
-    <i class="detail__link fa-solid fa-chevron-left"></i> вернуться назад
+    <i class="detail__link-icon fa-solid fa-chevron-left"></i> вернуться назад
   </a>
   <div class="detail__card">
     <h3 class="detail__title">{{ blog.title }}</h3>
