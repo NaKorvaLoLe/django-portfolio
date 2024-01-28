@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 
 html {
@@ -213,6 +213,11 @@ body {
   text-shadow: 0 0 20px #ffee10;
 }
 
+@media (max-width: 544) {
+  .projects__tab {
+    display: block;
+  }
+}
 .footer {
   margin-top: 10rem;
   padding-top: 2rem;
@@ -306,8 +311,12 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(1200, 1fr));
 }
 .detail__link {
-  text-decoration: none;
+  padding: 0 20px;
   color: #666;
+  transition: 0.7s;
+}
+.detail__link:hover {
+  color: #ffee10;
 }
 .detail__title {
   margin-top: 4rem;
